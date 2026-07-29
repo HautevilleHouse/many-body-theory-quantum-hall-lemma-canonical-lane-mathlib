@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ManyBodyTheoryQuantumHallLemmaCanonicalLaneLean.LandauLevelHilbertSpace
+import HautevilleHouse.ManyBodyTheoryQuantumHallLemmaCanonicalLaneLean.InteractionHamiltonian
+import HautevilleHouse.ManyBodyTheoryQuantumHallLemmaCanonicalLaneLean.LaughlinWavefunction
+import HautevilleHouse.ManyBodyTheoryQuantumHallLemmaCanonicalLaneLean.HallConductanceQuantization
+import HautevilleHouse.ManyBodyTheoryQuantumHallLemmaCanonicalLaneLean.EdgeStateBulkBoundary
+
+namespace HautevilleHouse
+namespace ManyBodyTheoryQuantumHallLemmaCanonicalLaneLean
+
+def ConstrainedManyBodyClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_many_body_endgame (A : AdmissibleClass) :
+    ConstrainedManyBodyClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ManyBodyTheoryQuantumHallLemmaCanonicalLaneLean
+end HautevilleHouse
